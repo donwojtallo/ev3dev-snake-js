@@ -1,0 +1,10 @@
+{
+	"name" : "Snake", 
+	"description": "A game for ev3dev",
+	"author": "Wojtal",
+	"main": "main.js",
+	"dependencies": {
+		"ev3dev": ">= 0.9.1"
+	},
+	"engine": "node 0.4.1"
+}
