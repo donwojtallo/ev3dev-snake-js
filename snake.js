@@ -16,17 +16,20 @@ var KD_GRAPHICS = 0x01;
 var KD_TEXT = 0x00;
 
 // switch terminal mode
-//exec('systemctl stop brickman');
 var vtfd = fs.openSync('/dev/tty', 'r+');
-var ret = ioctl(vtfd, KDSETMODE, KD_GRAPHICS);
-console.log('ioctl: ' + ret);
+try {
+	var ret = ioctl(vtfd, KDSETMODE, KD_GRAPHICS);
+} catch (e){
+	console.log('Cannot put the terminal in graphic mode. Please run the game in new virtual terminal using "openvt" command.');
+};
+
 
 // on exit
 var gameExit = function() {
 	led.clear();
-	//exec('systemctl start brickman');
-	var ret = ioctl(vtfd, KDSETMODE, KD_TEXT);
-	console.log('ioctl: ' + ret);
+	try {
+		var ret = ioctl(vtfd, KDSETMODE, KD_TEXT);
+	} catch (e){}
 	fs.close(vtfd);
 	process.exit();
 }
@@ -36,6 +39,8 @@ process.on('SIGINT', gameExit);
 buttons.exitButton(buttons.ESCAPE, gameExit);
 buttons.enable();
 
+sound.init();
+
 var state=0;
 
 // main loop
@@ -44,7 +49,7 @@ var mainLoop = function() {
 		case 0:
 		// wait for introSound
 		game.reset();
-		//sound.intro();
+		sound.intro();
 		state = 1;
 		setTimeout(mainLoop, 1);
 		break;
@@ -56,7 +61,7 @@ var mainLoop = function() {
 		if (game.isDead()) {
 			state++;
 			// dead
-			//sound.dead();
+			sound.dead();
 			setTimeout(mainLoop, 1);
 		} else {
 			setTimeout(mainLoop, game.frameSpeed());

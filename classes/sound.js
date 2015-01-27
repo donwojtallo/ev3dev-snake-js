@@ -1,42 +1,57 @@
 var sys = require('sys')
 var exec = require('child_process').exec;
 
+noSound = false;
+
+for (var i=0; i<process.argv.length; i++) {
+	if (process.argv[i] == '-no-sound') {
+		noSound = true;
+	};
+};
+
 exports.init = function() {
-	exec('amixer set Playback,0 30%');
+	if (!noSound) {
+		exec('amixer set Playback,0 30%');
+	}
 }
 
 exports.intro = function() {
-	exec( 'beep '
-		+ '-f 523.2 -l 50 -D 100 '
-		+ '-n -f 523.2 -l 50 -D 25 -r 2 '
-		+ '-n -f 523.2 -l 50 -D 100 '
-		+ '-n -f 392.0 -l 50 -D 100 '
-		+ ''
-		+ '-n -f 659.2 -l 50 -D 100 '
-		+ '-n -f 659.2 -l 50 -D 25 -r 2 '
-		+ '-n -f 659.2 -l 50 -D 100 '
-		+ '-n -f 523.2 -l 50 -D 100 '
-		+ ''
-		+ '-n -f 784.0 -l 50 -D 100 '
-		+ '-n -f 659.2 -l 50 -D 100 '
-		+ '-n -f 784.0 -l 50 -D 100 '
-		+ '-n -f 659.2 -l 50 -D 100 '
-		+ ''
-		+ '-n -f 1046.4 -l 150');
+	if (!noSound) {
+		exec( 'beep '
+			+ '-f 523.2 -l 50 -D 100 '
+			+ '-n -f 523.2 -l 50 -D 25 -r 2 '
+			+ '-n -f 523.2 -l 50 -D 100 '
+			+ '-n -f 392.0 -l 50 -D 100 '
+			+ ''
+			+ '-n -f 659.2 -l 50 -D 100 '
+			+ '-n -f 659.2 -l 50 -D 25 -r 2 '
+			+ '-n -f 659.2 -l 50 -D 100 '
+			+ '-n -f 523.2 -l 50 -D 100 '
+			+ ''
+			+ '-n -f 784.0 -l 50 -D 100 '
+			+ '-n -f 659.2 -l 50 -D 100 '
+			+ '-n -f 784.0 -l 50 -D 100 '
+			+ '-n -f 659.2 -l 50 -D 100 '
+			+ ''
+			+ '-n -f 1046.4 -l 150');
+	}
 }
 
 exports.dead = function() {
-	exec('espeak "Game over!" --stdout | aplay')
+	if (!noSound) {
+		//exec('espeak "Game over!" --stdout | aplay');
+		exec('aplay ./data/tada.wav');
+	}
 }
 
-exports. score = function() {
-	exec('aplay ../data/tada.wav');
-}
-
-exports.lowBeep = function() {
-	exec( 'beep -f 400 -l 50');
+exports.beep = function() {
+	if (!noSound) {
+		exec( 'beep -f 400 -l 50');
+	}
 }
 
 exports.highBeep = function() {
-	exec( 'beep -f 800 -l 50');
+	if (!noSound) {
+		exec( 'beep -f 800 -l 50');
+	}
 }

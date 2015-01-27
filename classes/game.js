@@ -1,5 +1,6 @@
 var graphics = require('./graphics.js');
 var buttons = require('./buttons.js');
+var sound = require('./sound.js');
 
 // game data
 var speed,
@@ -135,10 +136,13 @@ exports.run = function(key) {
 	//console.log(snakeX);console.log(snakeY);
 	
 	// feed
+	var hasScore = false;
 	if (snakeX == foodX && snakeY == foodY) {
 		//console.log('feed');
 		snakeLength++;
 		score++;
+		sound.highBeep();
+		hasScore = true;
 		graphics.number(score, 21, 0);
 		// spawn food
 		var availablePositions = mapW * mapH - snakeLength;
@@ -166,6 +170,9 @@ exports.run = function(key) {
 		dead = true;
 	} else {
 		map[positionOnMap] = true;
+		if (!hasScore) {
+			sound.beep();
+		}
 	}
 	
 	graphics.draw();
