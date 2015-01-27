@@ -66,6 +66,7 @@ var mainLoop = function() {
 		case 2:
 		var key = buttons.getLastKey();
 		if (key == buttons.ENTER) {
+			led.clear();
 			state = 0;
 			setTimeout(mainLoop, 1);
 		} else {
