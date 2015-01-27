@@ -5,7 +5,7 @@
 	"main": "main.js",
 	"dependencies": {
 		"ev3dev": ">= 0.9.1",
-		"ioctl": ">= 0.0.7",
+		"ioctl": ">= 0.0.7"
 	},
 	"engine": "node 0.4.1"
 }
