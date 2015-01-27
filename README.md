@@ -14,7 +14,11 @@ It features:
 
 How to install and run:
 
-1. You need to have ev3dev firmware installed on sd card: http://www.ev3dev.org/
+1. You need to have ev3dev firmware installed on sd card: http://www.ev3dev.org/.
+  We will download some Debian packages, so make sure that package lists are up to date:
+  ```
+  sudo apt-get update
+  ```
   
 2. Install GCC and Make (required by ioctl module):
   ```
@@ -29,7 +33,6 @@ How to install and run:
 4. Copy game to sd card. Make sure that the user have right privileges to write in game folder.
   You can clone this game directly from Github. To install Git on EV3:
   ```
-  sudo apt-get update
   sudo apt-get install git
   ```
   To clone the repository:
