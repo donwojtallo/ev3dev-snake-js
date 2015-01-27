@@ -106,17 +106,17 @@ exports.run = function(key) {
 		case 'R':
 		snakeX++;
 	}
-	// push block
-	snake.push([snakeX, snakeY]);
-	var positionOnMap = snakeY*mapW + snakeX;
-	graphics.block(snakeX+offsetX, snakeY+offsetY);
 	// remove tail block
-	if (snake.length > snakeLength) {
+	if (snake.length >= snakeLength) {
 		var block = snake.shift();
 		graphics.block(block[0]+offsetX, block[1]+offsetY, true);
 		var blockOnMap = (block[1])*mapW + (block[0]);
 		map[blockOnMap] = false;
 	}
+	// push block
+	snake.push([snakeX, snakeY]);
+	var positionOnMap = snakeY*mapW + snakeX;
+	graphics.block(snakeX+offsetX, snakeY+offsetY);
 	
 	// test
 	/*for(var y=0; y<mapH; y++) {
