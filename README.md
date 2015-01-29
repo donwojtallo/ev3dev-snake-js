@@ -14,7 +14,7 @@ It features:
 
 How to install and run:
 
-1. You need to have ev3dev firmware installed on sd card: http://www.ev3dev.org/.
+1. You need to have ev3dev firmware installed on sd card: http://www.ev3dev.org/. I highly recommend to setup the Internet     connection on your EV3 brick. Otherwise, you will need to install some dependencies manually.
   We will download some Debian packages, so make sure that package lists are up to date:
   ```
   sudo apt-get update
@@ -54,6 +54,6 @@ How to install and run:
   ```
   sudo openvt -s -w -- sudo --user <user> -- nodejs snake.js
   ```
-  To run the game without sound add --no-sound parameter.
+  To run the game without sound add -no-sound parameter.
 
 Enjoy!
