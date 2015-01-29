@@ -1,5 +1,6 @@
 # ev3dev-snake-js
 A simple snake game for Lego EV3 running ev3dev firmware.
+=========================================================
 
 ![alt tag](https://raw.github.com/donwojtallo/ev3dev-snake-js/master/photo.jpg)
 
@@ -12,7 +13,15 @@ It features:
 - playing wav file 
 - animating LED lights under buttons
 
-How to install and run:
+HOW TO INSTALL:
+---------------
+
+QUICK WAY
+
+1. Grab the latest copy with all compiled dependencies [here](https://github.com/donwojtallo/ev3dev-snake-js/releases).
+2. Extract the archive somewhere in /home directory.
+
+PRO WAY
 
 1. You need to have ev3dev firmware installed on sd card: http://www.ev3dev.org/. I highly recommend to setup the Internet     connection on your EV3 brick. Otherwise, you will need to install some dependencies manually.
   We will download some Debian packages, so make sure that package lists are up to date:
@@ -49,25 +58,37 @@ How to install and run:
   ```
   npm install
   ```
+
+
+HOW TO RUN:
+-----------
+
+You Have 2 options:
   
-7. Run the game!. You Have 2 options:
+- Run in a new virtual terminal:
   
-  a) Run in a new virtual terminal:
-    ```
-    sudo openvt -s -w -- sudo --user <user> -- nodejs snake.js
-    ```
-    To run the game without sound add -no-sound parameter.
-    
-  b) You can run the game directly using Brickman's File Browser.
-    This feature was implemented in version 0.4.0. If you have an older version, upgrade this way:
-    ```
-    sudo apt-get upgrade brickman
-    ```
-    Next, grant execute permissions on shell scripts:
-    ```
-    chmod u+x run-game.sh run-game-without-sound.sh
-    ```
-    Now you can run it by selecting ```run-game.sh``` or ```run-game-without-sound.sh``` from Brickmans File Browser.
+  ```
+  sudo openvt -s -w -- sudo --user <user> -- nodejs snake.js
+  ```
+  
+  To run the game without sound add -no-sound parameter.
+  
+or
+  
+- You can run the game directly using Brickman's File Browser.
+  This feature was implemented in version 0.4.0. If you have an older version, upgrade this way:
+  
+  ```
+  sudo apt-get upgrade brickman
+  ```
+  
+  Next, grant execute permissions on shell scripts:
+  
+  ```
+  chmod u+x run-game.sh run-game-without-sound.sh
+  ```
+  
+  Now you can run it by selecting ```run-game.sh``` or ```run-game-without-sound.sh``` from Brickmans File Browser.
 
 Got trouble with running this game? Ask for help [here](https://github.com/donwojtallo/ev3dev-snake-js/issues).
 
