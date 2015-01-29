@@ -1,7 +1,7 @@
 {
 	"name" : "Snake", 
 	"description": "A snake game for Lego EV3 running ev3dev firmware.",
-	"author": "Wojciech",
+	"author": "Wojtal",
 	"main": "main.js",
 	"dependencies": {
 		"ev3dev": ">= 0.9.1",
