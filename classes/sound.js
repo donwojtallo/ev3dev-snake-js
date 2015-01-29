@@ -40,7 +40,7 @@ exports.intro = function() {
 exports.dead = function() {
 	if (!noSound) {
 		//exec('espeak "Game over!" --stdout | aplay');
-		exec('aplay ./data/tada.wav');
+		exec('aplay '+__dirname+'/../data/tada.wav');
 	}
 }
 

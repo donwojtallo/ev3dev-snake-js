@@ -16,7 +16,7 @@ exports.init = function (callback) {
 		fs.write(fd, buffer);
 		
 		// load pbm, it needs to be 192x128
-		fs.readFile('./data/map.pbm', function (err, data) {
+		fs.readFile(__dirname+'/../data/map.pbm', function (err, data) {
 			var lines = data.toString('ascii').split("\n");
 			var skipped = 0;
 			var bytesToSkip = 0;

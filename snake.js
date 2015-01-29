@@ -50,6 +50,7 @@ var mainLoop = function() {
 		// wait for introSound
 		game.reset();
 		sound.intro();
+		led.clear();
 		state = 1;
 		setTimeout(mainLoop, 1);
 		break;
@@ -71,7 +72,6 @@ var mainLoop = function() {
 		case 2:
 		var key = buttons.getLastKey();
 		if (key == buttons.ENTER) {
-			led.clear();
 			state = 0;
 			setTimeout(mainLoop, 1);
 		} else {
