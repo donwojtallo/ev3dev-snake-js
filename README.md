@@ -50,10 +50,25 @@ How to install and run:
   npm install
   ```
   
-7. Run the game in a new virtual terminal:
-  ```
-  sudo openvt -s -w -- sudo --user <user> -- nodejs snake.js
-  ```
-  To run the game without sound add -no-sound parameter.
+7. Run the game!. You Have 2 options:
+  
+  a) Run in a new virtual terminal:
+    ```
+    sudo openvt -s -w -- sudo --user <user> -- nodejs snake.js
+    ```
+    To run the game without sound add -no-sound parameter.
+    
+  b) You can run the game directly using Brickman's File Browser.
+    This feature was implemented in version 0.4.0. If you have an older version, upgrade this way:
+    ```
+    sudo apt-get upgrade brickman
+    ```
+    Next, grant execute permissions on shell scripts:
+    ```
+    chmod u+x run-game.sh run-game-without-sound.sh
+    ```
+    Now you can run it by selecting ```run-game.sh``` or ```run-game-without-sound.sh``` from Brickmans File Browser.
+
+Got trouble with running this game? Ask for help [here](https://github.com/donwojtallo/ev3dev-snake-js/issues).
 
 Enjoy!
