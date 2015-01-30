@@ -4,7 +4,7 @@ A simple snake game for Lego EV3 running ev3dev firmware.
 
 ![alt tag](https://raw.github.com/donwojtallo/ev3dev-snake-js/master/photo.jpg)
 
-Youtube video:
+Watch on Youtube:
 
 [![ev3dev-snake-js on Youtube](http://img.youtube.com/vi/kHUkGucSeU0/0.jpg)](http://www.youtube.com/watch?v=kHUkGucSeU0)
 
