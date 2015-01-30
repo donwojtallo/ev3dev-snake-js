@@ -4,6 +4,10 @@ A simple snake game for Lego EV3 running ev3dev firmware.
 
 ![alt tag](https://raw.github.com/donwojtallo/ev3dev-snake-js/master/photo.jpg)
 
+Youtube video:
+
+[![ev3dev-snake-js on Youtube](http://img.youtube.com/vi/kHUkGucSeU0/0.jpg)](http://www.youtube.com/watch?v=kHUkGucSeU0)
+
 The code shows how to use LCD, buttons, sound and LEDs in Javascript (easy way).
 It features:
 - drawing numbers and boxes on LCD
