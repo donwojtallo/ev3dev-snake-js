@@ -11,7 +11,7 @@ Watch on Youtube:
 The code shows how to use LCD, buttons, sound and LEDs in Javascript (easy way).
 It features:
 - drawing numbers and boxes on LCD
-- reading and draw PBM files (can be created using Gimp program)
+- reading and blitting PBM files (can be created using Gimp program)
 - reading buttons state
 - playing beep sounds
 - playing wav file 
