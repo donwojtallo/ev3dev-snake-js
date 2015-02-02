@@ -86,7 +86,7 @@ or
   sudo apt-get upgrade brickman
   ```
   
-  Next, grant execute permissions on shell scripts:
+  Grant execute permissions on shell scripts:
   
   ```
   chmod u+x run-game.sh run-game-without-sound.sh
