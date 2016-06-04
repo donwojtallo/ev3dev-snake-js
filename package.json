@@ -2,10 +2,15 @@
 	"name" : "Snake", 
 	"description": "A snake game for Lego EV3 running ev3dev firmware.",
 	"author": "Wojtal",
+	"license": "MIT",
+	"repository" : { 
+		"type": "git",
+		"url": "https://github.com/donwojtallo/ev3dev-snake-js.git"
+	},
 	"main": "main.js",
 	"dependencies": {
-		"ev3dev": ">= 0.9.1",
-		"ioctl": ">= 0.0.7"
+		"ev3dev-lang": ">= 1.0.0",
+		"ioctl": ">= 1.0.1"
 	},
 	"engine": "node 0.4.1"
 }
