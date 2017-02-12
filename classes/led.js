@@ -1,9 +1,9 @@
-var ev3 = require('ev3dev');
+var ev3 = require('ev3dev-lang');
 
-var greenLeft = new ev3.LED('ev3:green:left');
-var greenRight = new ev3.LED('ev3:green:right');
-var redLeft = new ev3.LED('ev3:red:left');
-var redRight = new ev3.LED('ev3:red:right');
+var greenLeft = new ev3.LED('ev3:left:green');
+var greenRight = new ev3.LED('ev3:right:green');
+var redLeft = new ev3.LED('ev3:left:red');
+var redRight = new ev3.LED('ev3:right:red');
 
 var time = 0.0;
 var speed = 0.3;
